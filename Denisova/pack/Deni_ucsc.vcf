@@ -1,0 +1,202 @@
+##fileformat=VCFv4.1
+##FORMAT=<ID=A,Number=2,Type=Integer,Description="Number of A bases on forward and reverse strand">
+##FORMAT=<ID=C,Number=2,Type=Integer,Description="Number of C bases on forward and reverse strand">
+##FORMAT=<ID=G,Number=2,Type=Integer,Description="Number of G bases on forward and reverse strand">
+##FORMAT=<ID=T,Number=2,Type=Integer,Description="Number of T bases on forward and reverse strand">
+##FORMAT=<ID=IR,Number=1,Type=Integer,Description="Number of reads with InDel starting at this position">
+##FORMAT=<ID=AD,Number=.,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth (only filtered reads used for calling)">
+##FORMAT=<ID=GQ,Number=1,Type=Float,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##INFO=<ID=AF1000g,Number=1,Type=Float,Description="Global alternative allele frequency (AF) based on Alternate Allele Count/Total Allele Count in the 20110521 1000Genome release">
+##INFO=<ID=AMR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from AMR based on 1000G">
+##INFO=<ID=ASN_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from ASN based on 1000G">
+##INFO=<ID=AFR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from AFR based on 1000G">
+##INFO=<ID=EUR_AF,Number=1,Type=Float,Description="Alternative allele frequency (AF) for samples from EUR based on 1000G">
+##INFO=<ID=1000gALT,Number=1,Type=String,Description="Alternative allele referred to by 1000G">
+##INFO=<ID=TS,Number=1,Type=String,Description="Sequences in Ensembl v64 EPO Compara 6 primate block">
+##INFO=<ID=CAnc,Number=1,Type=String,Description="Ref-Chimp/Human ancestor base at this position">
+##INFO=<ID=GAnc,Number=1,Type=String,Description="Ref-Gorilla ancestor base at this position">
+##INFO=<ID=OAnc,Number=1,Type=String,Description="Ref-Orang ancestor base at this position">
+##INFO=<ID=rMac,Number=1,Type=String,Description="Rhesus macaque base/bases in the EPO Compara 6 primate block">
+##INFO=<ID=mSC,Number=1,Type=Float,Description="PhastCons Mammalian conservation score (excluding human)">
+##INFO=<ID=pSC,Number=1,Type=Float,Description="PhastCons Primate conservation score (excluding human)">
+##INFO=<ID=bSC,Number=1,Type=Float,Description="B score">
+##INFO=<ID=Map20,Number=1,Type=Float,Description="Mapability score of Duke University (determined from 20bp reads)">
+##INFO=<ID=CpG,Number=0,Type=Flag,Description="Position is in a CpG context based on the Ref/Ancestor">
+##INFO=<ID=RM,Number=0,Type=Flag,Description="Position is repeat masked in the reference sequence of the EPO 6 primate block">
+##INFO=<ID=SysErr,Number=0,Type=Flag,Description="Position was identified as systematic error in the 1000 genome trios">
+##INFO=<ID=UR,Number=0,Type=Flag,Description="Position is in a copy number control region identified by the Eichler lab">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes, for each ALT allele, in the same order as listed">
+##INFO=<ID=AF,Number=A,Type=Float,Description="Allele Frequency, for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=BaseQRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Filtered Depth">
+##INFO=<ID=DS,Number=0,Type=Flag,Description="Were any of the samples downsampled?">
+##INFO=<ID=Dels,Number=1,Type=Float,Description="Fraction of Reads Containing Spanning Deletions">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=HRun,Number=1,Type=Integer,Description="Largest Contiguous Homopolymer Run of Variant Allele In Either Direction">
+##INFO=<ID=HaplotypeScore,Number=1,Type=Float,Description="Consistency of the site with at most two segregating haplotypes">
+##INFO=<ID=InbreedingCoeff,Number=1,Type=Float,Description="Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation">
+##INFO=<ID=MQ,Number=1,Type=Float,Description="RMS Mapping Quality">
+##INFO=<ID=MQ0,Number=1,Type=Integer,Description="Total Mapping Quality Zero Reads">
+##INFO=<ID=MQRankSum,Number=1,Type=Float,Description="Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities">
+##INFO=<ID=QD,Number=1,Type=Float,Description="Variant Confidence/Quality by Depth">
+##INFO=<ID=ReadPosRankSum,Number=1,Type=Float,Description="Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias">
+##UnifiedGenotyper="analysis_type=UnifiedGenotyper input_file=[../final/T_hg19_1000g.bam] read_buffer_size=null phone_home=STANDARD read_filter=[] intervals=[org.broadinstitute.sting.commandline.IntervalBinding@1fa12495] excludeIntervals=null interval_set_rule=UNION interval_merging=ALL reference_sequence=/mnt/scratch/Genomes/hg19_1000g/whole_genome.fa rodBind=[] nonDeterministicRandomSeed=false downsampling_type=BY_SAMPLE downsample_to_fraction=null downsample_to_coverage=250 baq=OFF baqGapOpenPenalty=40.0 performanceLog=null useOriginalQualities=false defaultBaseQualities=-1 validation_strictness=SILENT unsafe=null num_threads=1 read_group_black_list=null pedigree=[] pedigreeString=[] pedigreeValidationType=STRICT allow_intervals_with_unindexed_bam=false disable_experimental_low_memory_sharding=false logging_level=INFO log_to_file=null help=false genotype_likelihoods_model=BOTH p_nonref_model=EXACT heterozygosity=0.001 pcr_error_rate=1.0E-4 genotyping_mode=DISCOVERY output_mode=EMIT_ALL_SITES standard_min_confidence_threshold_for_calling=30.0 standard_min_confidence_threshold_for_emitting=30.0 computeSLOD=false alleles=(RodBinding name= source=UNBOUND) assume_single_sample_reads=null min_base_quality_score=17 max_deletion_fraction=0.05 min_indel_count_for_genotyping=5 indel_heterozygosity=1.25E-4 indelGapContinuationPenalty=10.0 indelGapOpenPenalty=45.0 indelHaplotypeSize=80 bandedIndel=false indelDebug=false ignoreSNPAlleles=false dbsnp=(RodBinding name= source=UNBOUND) out=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub NO_HEADER=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub sites_only=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub debug_file=null metrics_file=null annotation=[] excludeAnnotation=[] filter_mismatching_base_and_quals=false"
+##contig=<ID=1,length=249250621>
+##contig=<ID=10,length=135534747>
+##contig=<ID=11,length=135006516>
+##contig=<ID=12,length=133851895>
+##contig=<ID=13,length=115169878>
+##contig=<ID=14,length=107349540>
+##contig=<ID=15,length=102531392>
+##contig=<ID=16,length=90354753>
+##contig=<ID=17,length=81195210>
+##contig=<ID=18,length=78077248>
+##contig=<ID=19,length=59128983>
+##contig=<ID=2,length=243199373>
+##contig=<ID=20,length=63025520>
+##contig=<ID=21,length=48129895>
+##contig=<ID=22,length=51304566>
+##contig=<ID=3,length=198022430>
+##contig=<ID=4,length=191154276>
+##contig=<ID=5,length=180915260>
+##contig=<ID=6,length=171115067>
+##contig=<ID=7,length=159138663>
+##contig=<ID=8,length=146364022>
+##contig=<ID=9,length=141213431>
+##contig=<ID=GL000191.1,length=106433>
+##contig=<ID=GL000192.1,length=547496>
+##contig=<ID=GL000193.1,length=189789>
+##contig=<ID=GL000194.1,length=191469>
+##contig=<ID=GL000195.1,length=182896>
+##contig=<ID=GL000196.1,length=38914>
+##contig=<ID=GL000197.1,length=37175>
+##contig=<ID=GL000198.1,length=90085>
+##contig=<ID=GL000199.1,length=169874>
+##contig=<ID=GL000200.1,length=187035>
+##contig=<ID=GL000201.1,length=36148>
+##contig=<ID=GL000202.1,length=40103>
+##contig=<ID=GL000203.1,length=37498>
+##contig=<ID=GL000204.1,length=81310>
+##contig=<ID=GL000205.1,length=174588>
+##contig=<ID=GL000206.1,length=41001>
+##contig=<ID=GL000207.1,length=4262>
+##contig=<ID=GL000208.1,length=92689>
+##contig=<ID=GL000209.1,length=159169>
+##contig=<ID=GL000210.1,length=27682>
+##contig=<ID=GL000211.1,length=166566>
+##contig=<ID=GL000212.1,length=186858>
+##contig=<ID=GL000213.1,length=164239>
+##contig=<ID=GL000214.1,length=137718>
+##contig=<ID=GL000215.1,length=172545>
+##contig=<ID=GL000216.1,length=172294>
+##contig=<ID=GL000217.1,length=172149>
+##contig=<ID=GL000218.1,length=161147>
+##contig=<ID=GL000219.1,length=179198>
+##contig=<ID=GL000220.1,length=161802>
+##contig=<ID=GL000221.1,length=155397>
+##contig=<ID=GL000222.1,length=186861>
+##contig=<ID=GL000223.1,length=180455>
+##contig=<ID=GL000224.1,length=179693>
+##contig=<ID=GL000225.1,length=211173>
+##contig=<ID=GL000226.1,length=15008>
+##contig=<ID=GL000227.1,length=128374>
+##contig=<ID=GL000228.1,length=129120>
+##contig=<ID=GL000229.1,length=19913>
+##contig=<ID=GL000230.1,length=43691>
+##contig=<ID=GL000231.1,length=27386>
+##contig=<ID=GL000232.1,length=40652>
+##contig=<ID=GL000233.1,length=45941>
+##contig=<ID=GL000234.1,length=40531>
+##contig=<ID=GL000235.1,length=34474>
+##contig=<ID=GL000236.1,length=41934>
+##contig=<ID=GL000237.1,length=45867>
+##contig=<ID=GL000238.1,length=39939>
+##contig=<ID=GL000239.1,length=33824>
+##contig=<ID=GL000240.1,length=41933>
+##contig=<ID=GL000241.1,length=42152>
+##contig=<ID=GL000242.1,length=43523>
+##contig=<ID=GL000243.1,length=43341>
+##contig=<ID=GL000244.1,length=39929>
+##contig=<ID=GL000245.1,length=36651>
+##contig=<ID=GL000246.1,length=38154>
+##contig=<ID=GL000247.1,length=36422>
+##contig=<ID=GL000248.1,length=39786>
+##contig=<ID=GL000249.1,length=38502>
+##contig=<ID=MT,length=16569>
+##contig=<ID=X,length=155270560>
+##contig=<ID=Y,length=59373566>
+##reference=file:///mnt/scratch/Genomes/hg19_1000g/whole_genome.fa
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	DenisovaPinky
+X	50522539	rs955368	T	C	1189.58	.	AC=2;AF=1.;AN=2;DP=31;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.3699999999999974;1000gALT=C;AF1000g=0.92;AMR_AF=0.97;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.;pSC=0.112;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:31:93.30:1223,93,0:0,0:15,16:0,0:0,0:0
+X	50525207	.	C	CA	479.14	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-2.0289999999999999;DP=28;FS=2.02;HRun=12;HaplotypeScore=74.5263999999999953;MQ=39.3599999999999994;MQ0=0;MQRankSum=1.3420000000000001;QD=17.1099999999999994;ReadPosRankSum=0.655;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.005;pSC=0.004;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:28:13.86:518,0,14:0,0:13,15:0,0:0,0:23
+X	50526033	rs2211228	C	T	1113.69	.	AC=2;AF=1.;AN=2;DP=29;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.3999999999999986;1000gALT=T;AF1000g=0.92;AMR_AF=0.97;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.001;pSC=0.043;Map20=0.5	GT:DP:GQ:PL:A:C:G:T:IR	1/1:29:87.28:1147,87,0:0,0:0,0:0,0:22,7:0
+X	50527047	rs6521882	G	A	1221.70	.	AC=2;AF=1.;AN=2;DP=32;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.1799999999999997;1000gALT=A;AF1000g=0.11;AMR_AF=0.07;ASN_AF=0.01;ASN_AF=0.03;CpG;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.001;pSC=0.054;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:32:96.31:1255,96,0:13,19:0,0:0,0:0,0:0
+X	50528781	rs181175952	G	A	887.13	.	AC=2;AF=1.;AN=2;DP=23;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.5700000000000003;1000gALT=A;AF1000g=0.;ASN_AF=0.;CpG;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.;pSC=0.671;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:23:69.23:920,69,0:10,13:0,0:0,0:0,0:0
+X	50529957	.	C	T	767.22	.	AC=2;AF=1.;AN=2;BaseQRankSum=-0.829;DP=49;Dels=0.;FS=0.;HRun=1;HaplotypeScore=1.9329000000000001;MQ=24.1600000000000001;MQ0=26;MQRankSum=1.583;QD=15.6600000000000001;ReadPosRankSum=0.226;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.669;pSC=0.667;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:49:66.18:800,66,0:0,0:6,17:0,0:10,16:0
+X	50530771	.	G	GA	646.24	.	AC=2;AF=1.;AN=2;BaseQRankSum=-1.506;DP=33;FS=0.;HRun=12;HaplotypeScore=83.3845000000000027;MQ=39.3299999999999983;MQ0=0;MQRankSum=-0.043;QD=19.5799999999999983;ReadPosRankSum=-0.129;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=A;mSC=0.002;pSC=0.003;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:33:42.77:688,43,0:0,0:0,0:22,9:0,0:26
+X	50532481	.	C	T	1252.94	.	AC=2;AF=1.;AN=2;DP=33;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.9699999999999989;CpG;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.024;pSC=0.023;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:33:99:1286,99,0:0,0:0,0:0,0:18,15:0
+X	50535276	.	A	T	188.57	.	AC=1;AF=0.5;AN=2;BaseQRankSum=0.265;DP=30;Dels=0.;FS=1.8220000000000001;HRun=1;HaplotypeScore=1.5781000000000001;MQ=25.6499999999999986;MQ0=9;MQRankSum=0.416;QD=6.29;ReadPosRankSum=-0.416;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.115;pSC=0.073;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:30:99:219,0,259:8,11:0,0:0,0:5,6:0
+X	50537378	.	G	T	1286.45	.	AC=2;AF=1.;AN=2;DP=34;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.8400000000000034;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=1.;pSC=0.613;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:34:99:1319,102,0:0,0:0,0:0,0:20,14:0
+X	50537645	.	C	T	9.38	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=0.9340000000000001;DP=16;Dels=0.;HRun=0;HaplotypeScore=9.5751000000000008;MQ=38.1700000000000017;MQ0=1;MQRankSum=0.764;QD=0.59;ReadPosRankSum=-0.425;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=-;mSC=0.;pSC=0.037;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:16:38.84:39,0,479:0,0:8,6:0,0:1,1:0
+X	50537647	.	T	C	98.85	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=0.54;DP=15;Dels=0.;FS=2.5219999999999998;HRun=0;HaplotypeScore=9.5753000000000004;MQ=38.9699999999999989;MQ0=1;MQRankSum=0.694;QD=6.5899999999999999;ReadPosRankSum=-0.849;RM;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=C;rMac=-;mSC=0.;pSC=0.032;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:15:99:129,0,325:0,0:1,3:0,0:7,4:8
+X	50538015	.	A	C	483.20	.	AC=2;AF=1.;AN=2;DP=13;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.1700000000000017;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.008;pSC=0.001;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:13:39.13:516,39,0:0,0:2,11:0,0:0,0:0
+X	50538062	.	G	T,C	13.52	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=1.026;DP=6;Dels=0.;HRun=1;HaplotypeScore=0.;MQ=22.1999999999999993;MQ0=2;MQRankSum=-1.026;QD=2.25;ReadPosRankSum=0.;1000gALT=C;AF1000g=0.;ASN_AF=0.;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=-;rMac=-	GT:DP:GQ:PL:A:C:G:T:IR	0/1:6:43.31:43,0,45:0,0:0,0:1,3:0,2:0
+X	50538088	.	G	T	16.42	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=0.736;DP=8;Dels=0.;HRun=1;HaplotypeScore=0.9933;MQ=19.2199999999999989;MQ0=4;MQRankSum=-0.736;QD=2.0499999999999998;ReadPosRankSum=-0.736;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=-;rMac=-	GT:DP:GQ:PL:A:C:G:T:IR	0/1:8:30.99:46,0,31:0,0:0,1:2,2:0,3:0
+X	50538850	.	A	G	379.23	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.066;DP=29;Dels=0.;FS=5.7809999999999997;HRun=1;HaplotypeScore=0.9997;MQ=37.;MQ0=0;MQRankSum=0.46;QD=13.0800000000000001;ReadPosRankSum=1.1180000000000001;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.021;pSC=0.183;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:29:99:409,0,539:7,9:0,0:9,4:0,0:0
+X	50539520	.	G	C	469.24	.	AC=1;AF=0.5;AN=2;BaseQRankSum=0.549;DP=44;Dels=0.;FS=0.;HRun=1;HaplotypeScore=1.9156;MQ=37.;MQ0=0;MQRankSum=-0.11;QD=10.6600000000000001;ReadPosRankSum=0.915;CpG;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.034;pSC=0.177;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:44:99:499,0,952:0,0:7,9:13,15:0,0:0
+X	50542290	.	C	T	750.85	.	AC=1;AF=0.5;AN=2;BaseQRankSum=0.47;DP=44;Dels=0.;FS=4.3760000000000003;HRun=3;HaplotypeScore=0.;MQ=37.;MQ0=0;MQRankSum=-0.258;QD=17.0599999999999987;ReadPosRankSum=-0.446;CpG;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=T;mSC=0.;pSC=0.073;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:44:99:781,0,678:0,0:12,9:0,0:9,14:0
+X	50542692	rs5915313	G	A	801.47	.	AC=2;AF=1.;AN=2;DP=21;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.1700000000000017;1000gALT=A;AF1000g=0.6899999999999999;AMR_AF=0.71;ASN_AF=0.76;ASN_AF=0.68;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.995;pSC=0.714	GT:DP:GQ:PL:A:C:G:T:IR	1/1:21:63.21:834,63,0:12,9:0,0:0,0:0,0:0
+X	50543552	.	T	C	776.83	.	AC=2;AF=1.;AN=2;DP=21;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9997;MQ=37.;MQ0=0;QD=36.990000000000002;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.;pSC=0.928;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:21:63.19:810,63,0:0,0:12,9:0,0:0,0:0
+X	50546665	.	A	G	406.16	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.027;DP=25;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9997;MQ=37.;MQ0=0;MQRankSum=1.605;QD=16.25;ReadPosRankSum=1.169;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.102;pSC=0.28;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:25:99:436,0,398:7,5:0,0:7,6:0,0:0
+X	50547506	rs4826650	C	T	1293.03	.	AC=2;AF=1.;AN=2;DP=34;Dels=0.;FS=0.;HRun=2;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.0300000000000011;1000gALT=T;AF1000g=0.68;AMR_AF=0.7;ASN_AF=0.76;ASN_AF=0.68;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.;pSC=0.555;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:34:99:1326,102,0:0,0:0,0:0,0:15,19:0
+X	50552434	.	G	A	766.42	.	AC=2;AF=1.;AN=2;DP=20;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.3200000000000003;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.01;pSC=0.056;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:20:60.20:799,60,0:12,8:0,0:0,0:0,0:0
+X	50553048	.	T	C	873.80	.	AC=2;AF=1.;AN=2;DP=23;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.990000000000002;RM;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.032;pSC=0.015;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:23:69.22:907,69,0:0,0:10,13:0,0:0,0:0
+X	50554806	.	C	T	1244.98	.	AC=2;AF=1.;AN=2;DP=32;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.9665;MQ=37.;MQ0=0;QD=38.9099999999999966;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.138;pSC=0.897;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:32:96.32:1278,96,0:0,0:0,0:0,0:13,19:0
+X	50554960	.	C	T	610.13	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.837;DP=32;Dels=0.;FS=5.4690000000000003;HRun=0;HaplotypeScore=2.9992000000000001;MQ=36.6799999999999997;MQ0=0;MQRankSum=-1.2649999999999999;QD=19.0700000000000003;ReadPosRankSum=-0.603;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=1.;pSC=0.907;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:32:99:640,0,387:0,0:4,8:0,0:12,8:0
+X	50556176	.	G	A	10.43	LowQual	AC=1;AF=0.5;AN=2;DP=1;Dels=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=10.4299999999999997;CpG;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=-;mSC=0.956;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:1:1.76:40,3,0:0,1:0,0:0,0:0,0:0
+X	50556744	.	T	G	487.07	.	AC=2;AF=1.;AN=2;DP=13;Dels=0.;FS=0.;HRun=2;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.4699999999999989;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.035;pSC=0.171;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:13:39.13:520,39,0:0,0:0,0:7,6:0,0:0
+X	50559758	.	CTGTG	C	195.99	.	AC=2;AF=1.;AN=2;DP=24;FS=0.;HRun=0;HaplotypeScore=96.814700000000002;MQ=37.1700000000000017;MQ0=1;QD=8.1699999999999999;RM;TS=HPGOMC;CAnc=CTGTG;GAnc=CTGTG;OAnc=CTGTG;rMac=CTGTG;mSC=0.;pSC=0.007;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:23:15.05:238,15,0:0,0:14,11:0,0:0,0:5
+X	50561599	rs2382674	T	C	1138.66	.	AC=2;AF=1.;AN=2;DP=30;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.9600000000000009;1000gALT=C;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;CpG;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.003;pSC=0.025;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:30:90.29:1172,90,0:0,0:15,15:0,0:0,0:0
+X	50563256	.	CT	C	28.34	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=3.0579999999999998;DP=37;HRun=14;HaplotypeScore=108.4201999999999941;MQ=31.3399999999999999;MQ0=4;MQRankSum=1.694;QD=0.77;ReadPosRankSum=2.1779999999999999;1000gALT=CT;AF1000g=0.03;AMR_AF=0.03;ASN_AF=0.01;ASN_AF=0.04;RM;TS=HPGOMC;CAnc=CT;GAnc=CT;OAnc=CT;rMac=CA;mSC=0.106;pSC=0.066;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:31:67.36:67,0,443:0,0:10,27:0,0:0,0:9
+X	50563501	.	G	C	5.71	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=1.2310000000000001;DP=7;Dels=0.;HRun=8;HaplotypeScore=0.;MQ=26.4800000000000004;MQ0=2;MQRankSum=-1.2310000000000001;QD=0.82;ReadPosRankSum=0.358;CpG;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=C;rMac=-	GT:DP:GQ:PL:A:C:G:T:IR	0/1:7:34.35:34,0,105:0,0:0,2:2,3:0,0:0
+X	50563796	.	C	A	494.53	.	AC=2;AF=1.;AN=2;DP=16;Dels=0.;FS=0.;HRun=3;HaplotypeScore=0.;MQ=33.0600000000000023;MQ0=2;QD=30.9100000000000001;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=A;mSC=0.004;pSC=0.003;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:16:42.12:528,42,0:10,4:1,1:0,0:0,0:0
+X	50565029	rs5915318	A	G	274.74	.	AC=2;AF=1.;AN=2;DP=11;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=31.4299999999999997;MQ0=1;QD=24.9800000000000004;1000gALT=G;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=-	GT:DP:GQ:PL:A:C:G:T:IR	1/1:11:24.07:308,24,0:0,1:0,0:4,6:0,0:0
+X	50565094	.	CAA	C	55.34	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.521;DP=26;FS=2.081;HRun=19;HaplotypeScore=86.4994999999999976;MQ=30.3200000000000003;MQ0=8;MQRankSum=1.331;QD=2.1299999999999999;ReadPosRankSum=-0.752;RM;TS=HPGOMC;CAnc=CAA;GAnc=CAA;OAnc=CAA;rMac=CAA;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:18:94.37:94,0,177:0,0:13,11:0,0:0,0:10
+X	50567341	rs5915194	G	A	1113.58	.	AC=2;AF=1.;AN=2;DP=29;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.3999999999999986;1000gALT=A;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;CpG;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.002;pSC=0.001;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:29:87.28:1147,87,0:12,17:0,0:0,0:0,0:0
+X	50568867	.	C	T	1310.67	.	AC=2;AF=1.;AN=2;DP=34;Dels=0.;FS=0.;HRun=2;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.5499999999999972;1000gALT=T,C;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.;pSC=0.033;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:34:99:1344,102,0:0,0:0,0:0,0:12,22:0
+X	50568914	.	T	C	532.91	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.955;DP=33;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;MQRankSum=0.198;QD=16.1499999999999986;ReadPosRankSum=-0.774;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.;pSC=0.03;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:33:99:563,0,524:0,0:6,11:0,0:5,11:0
+X	50571355	.	GCA	G	518.27	.	AC=2;AF=1.;AN=2;DP=29;FS=0.;HRun=0;HaplotypeScore=95.4808000000000021;MQ=37.7700000000000031;MQ0=0;QD=17.870000000000001;TS=HPGOMC;CAnc=GCA;GAnc=GCA;OAnc=GCA;rMac=GCA;mSC=0.;pSC=0.018;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:29:47.98:560,48,0:0,0:0,0:12,18:0,0:16
+X	50573415	.	A	G	473.54	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.68;DP=29;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9997;MQ=34.8599999999999994;MQ0=0;MQRankSum=-0.022;QD=16.3299999999999983;ReadPosRankSum=-0.417;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.004;pSC=0.007;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:29:99:504,0,384:6,7:0,0:7,9:0,0:0
+X	50575310	.	A	G	797.71	.	AC=2;AF=1.;AN=2;DP=21;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.990000000000002;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.729;pSC=0.323;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:21:63.20:831,63,0:0,0:0,0:10,11:0,0:0
+X	50575436	.	GT	G	233.96	.	AC=1;AF=0.5;AN=2;BaseQRankSum=1.6499999999999999;DP=43;FS=1.21;HRun=14;HaplotypeScore=158.5929999999999893;MQ=36.740000000000002;MQ0=0;MQRankSum=0.516;QD=5.4400000000000004;ReadPosRankSum=1.6240000000000001;RM;TS=HPGOMC;CAnc=GT;GAnc=GT;OAnc=GT;rMac=GT;mSC=0.008;pSC=0.022;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:43:99:273,0,340:0,0:0,0:19,24:0,0:28
+X	50577141	rs5915323	C	T	884.11	.	AC=2;AF=1.;AN=2;DP=23;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.4399999999999977;1000gALT=T;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.;pSC=0.029;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:23:69.23:917,69,0:0,0:0,0:0,0:11,12:0
+X	50577219	rs5915324	T	C	1481.60	.	AC=2;AF=1.;AN=2;DP=39;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9992;MQ=37.;MQ0=0;QD=37.990000000000002;1000gALT=C;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.;pSC=0.627;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:39:99:1515,117,0:0,0:17,22:0,0:0,0:0
+X	50578528	rs2382675	A	G	1067.48	.	AC=2;AF=1.;AN=2;DP=28;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.1199999999999974;1000gALT=G;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=A;GAnc=G;OAnc=G;rMac=A;mSC=0.;pSC=0.032;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:28:84.27:1100,84,0:0,0:0,0:10,18:0,0:0
+X	50578900	rs2066198	A	G	847.47	.	AC=2;AF=1.;AN=2;DP=23;Dels=0.;FS=0.;HRun=2;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=36.8500000000000014;1000gALT=G;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.;pSC=0.02;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:23:69.21:880,69,0:0,0:0,0:13,10:0,0:0
+X	50580721	rs2000085	C	T	1065.63	.	AC=2;AF=1.;AN=2;DP=28;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.9987;MQ=37.;MQ0=0;QD=38.0600000000000023;1000gALT=T;AF1000g=0.98;AMR_AF=0.99;ASN_AF=1.;ASN_AF=1.;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.192;pSC=0.104;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:28:84.27:1099,84,0:0,0:0,0:0,0:13,15:0
+X	50580917	rs68027007	GTCTA	G	906.61	.	AC=2;AF=1.;AN=2;DP=27;FS=0.;HRun=0;HaplotypeScore=134.1140000000000043;MQ=41.740000000000002;MQ0=0;QD=33.5799999999999983;1000gALT=G;AF1000g=0.9399999999999999;AMR_AF=0.98;ASN_AF=0.98;ASN_AF=0.99;RM;TS=HPGOMC;CAnc=GTCTA;GAnc=GTCTA;OAnc=GTCTA;rMac=-----;mSC=0.001;pSC=0.169;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:27:57.19:949,57,0:0,0:0,0:10,17:0,0:19
+X	50581326	rs5915326	C	T	946.17	.	AC=2;AF=1.;AN=2;DP=25;Dels=0.;FS=0.;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.8500000000000014;1000gALT=T;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;CpG;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.001;pSC=0.016;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:25:75.24:979,75,0:0,0:0,0:0,0:13,12:0
+X	50581721	.	T	TA	1431.90	.	AC=2;AF=1.;AN=2;DP=41;FS=0.;HRun=6;HaplotypeScore=109.4749000000000052;MQ=39.2800000000000011;MQ0=0;QD=34.9200000000000017;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=T;mSC=0.;pSC=0.002;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:41:99:1474,120,0:0,0:0,0:0,0:24,17:40
+X	50581791	.	C	T	453.38	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-0.029;DP=25;Dels=0.04;FS=1.569;HRun=0;HaplotypeScore=8.9263999999999992;MQ=37.4500000000000028;MQ0=0;MQRankSum=-0.673;QD=18.1400000000000006;ReadPosRankSum=0.498;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.051;pSC=0.752;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:24:99:483,0,319:0,0:6,4:0,0:7,7:0
+X	50582165	rs3920845	A	G	999.64	.	AC=2;AF=1.;AN=2;DP=26;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=38.4500000000000028;1000gALT=G;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;RM;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.003;pSC=0.058;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:26:78.25:1033,78,0:0,0:0,0:11,15:0,0:0
+X	50584287	.	T	C	806.74	.	AC=1;AF=0.5;AN=2;BaseQRankSum=0.516;DP=41;Dels=0.;FS=15.9939999999999998;HRun=0;HaplotypeScore=1.9995000000000001;MQ=37.;MQ0=0;MQRankSum=1.4690000000000001;QD=19.6799999999999997;ReadPosRankSum=0.013;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.014;pSC=0.141;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:41:99:837,0,555:0,0:15,9:0,0:4,13:0
+X	50584564	.	T	A	593.80	.	AC=1;AF=0.5;AN=2;BaseQRankSum=1.083;DP=32;Dels=0.;FS=1.397;HRun=1;HaplotypeScore=0.;MQ=37.;MQ0=0;MQRankSum=-0.209;QD=18.5599999999999987;ReadPosRankSum=-0.019;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.001;pSC=0.255;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:32:99:624,0,455:8,10:0,0:0,0:5,9:0
+X	50584797	.	A	G	1386.72	.	AC=2;AF=1.;AN=2;DP=37;Dels=0.;FS=0.;HRun=1;HaplotypeScore=2.9588999999999999;MQ=37.;MQ0=0;QD=37.4799999999999969;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.006;pSC=0.008;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:37:99:1420,111,0:0,0:0,0:19,18:0,0:0
+X	50585184	.	G	C	1116.82	.	AC=2;AF=1.;AN=2;DP=30;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9832;MQ=37.;MQ0=0;QD=37.2299999999999969;TS=HPGOMC;CAnc=G;GAnc=G;OAnc=G;rMac=G;mSC=0.058;pSC=0.036;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:30:90.26:1150,90,0:0,0:19,11:0,0:0,0:0
+X	50586983	.	A	AT	143.35	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-2.4729999999999999;DP=24;FS=1.603;HRun=18;HaplotypeScore=74.2276999999999987;MQ=37.2199999999999989;MQ0=0;MQRankSum=-0.297;QD=5.9699999999999998;ReadPosRankSum=0.429;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A	GT:DP:GQ:PL:A:C:G:T:IR	0/1:23:39.53:182,0,40:11,13:0,0:0,0:0,0:18
+X	50587173	rs5961153	A	G	309.74	.	AC=2;AF=1.;AN=2;DP=24;Dels=0.;FS=0.;HRun=3;HaplotypeScore=0.;MQ=22.5700000000000003;MQ0=9;QD=12.9100000000000001;1000gALT=G;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A	GT:DP:GQ:PL:A:C:G:T:IR	1/1:24:27.07:343,27,0:1,5:0,0:8,10:0,0:0
+X	50587430	rs5915328	T	C	1108.21	.	AC=2;AF=1.;AN=2;DP=33;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.9997;MQ=33.9399999999999977;MQ0=1;QD=33.5799999999999983;1000gALT=C;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;RM;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=C;rMac=C;mSC=0.447;pSC=0.;Map20=0.5	GT:DP:GQ:PL:A:C:G:T:IR	1/1:33:93.23:1141,93,0:0,0:19,14:0,0:0,0:0
+X	50589119	.	A	G	1288.08	.	AC=2;AF=1.;AN=2;DP=34;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=37.8800000000000026;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=-;mSC=0.17;pSC=0.134;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:34:99:1321,102,0:0,0:0,0:16,18:0,0:0
+X	50589652	.	AT	A	117.56	.	AC=1;AF=0.5;AN=2;BaseQRankSum=3.0910000000000002;DP=27;FS=7.3460000000000001;HRun=14;HaplotypeScore=63.3333999999999975;MQ=34.9099999999999966;MQ0=2;MQRankSum=-0.249;QD=4.3499999999999996;ReadPosRankSum=0.178;RM;TS=HPGOMC;CAnc=AT;GAnc=AT;OAnc=AT;rMac=--;mSC=0.12;pSC=0.021;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:24:99:157,0,177:14,12:0,0:0,0:1,0:13
+X	50592036	.	T	TA	142.23	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-1.5569999999999999;DP=33;FS=11.8309999999999995;HRun=17;HaplotypeScore=111.6257999999999981;MQ=37.4699999999999989;MQ0=1;MQRankSum=-0.46;QD=4.3099999999999996;ReadPosRankSum=-0.9429999999999999;RM;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=T;mSC=0.008;pSC=0.007;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:32:99:181,0,109:0,1:0,0:0,0:16,16:18
+X	50595215	.	ATATT	A	723.07	.	AC=1;AF=0.5;AN=2;BaseQRankSum=-2.3250000000000002;DP=25;FS=3.1389999999999998;HRun=0;HaplotypeScore=170.9701000000000022;MQ=36.4099999999999966;MQ0=1;MQRankSum=-0.066;QD=28.9200000000000017;ReadPosRankSum=0.066;RM;TS=HPGOMC;CAnc=ATATT;GAnc=ATATT;OAnc=ATATT;rMac=ATATT;mSC=0.089;pSC=0.054;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:23:46.48:762,0,46:11,15:0,0:0,0:0,0:17
+X	50598221	.	T	A	10.43	LowQual	AC=1;AF=0.5;AN=2;DP=2;Dels=0.;HRun=2;HaplotypeScore=0.;MQ=30.8099999999999987;MQ0=0;QD=5.21;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.993;pSC=0.194;Map20=0.5	GT:DP:GQ:PL:A:C:G:T:IR	0/1:2:1.76:40,3,0:0,1:0,0:1,0:0,0:0
+X	50598222	.	T	C	48.77	.	AC=2;AF=1.;AN=2;DP=2;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=37.;MQ0=0;QD=24.379999999999999;RM;TS=HPGOMC;CAnc=C;GAnc=C;OAnc=C;rMac=C;mSC=0.991;pSC=0.185;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:2:6.02:80,6,0:0,0:0,2:0,0:0,0:0
+X	50598612	.	CTT	C	94.44	.	AC=1;AF=0.5;AN=2;BaseQRankSum=0.19;DP=31;FS=3.6819999999999999;HRun=18;HaplotypeScore=163.7049000000000092;MQ=35.9600000000000009;MQ0=2;MQRankSum=0.408;QD=3.0499999999999998;ReadPosRankSum=1.278;RM;TS=HPGOMC;CAnc=CTT;GAnc=CTT;OAnc=CTT;rMac=CTT;mSC=0.621;pSC=0.228;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:28:99:133,0,222:0,0:13,18:0,0:0,0:19
+X	50599447	.	CT	C	21.83	LowQual	AC=1;AF=0.5;AN=2;BaseQRankSum=1.272;DP=26;HRun=13;HaplotypeScore=113.0764999999999958;MQ=37.;MQ0=0;MQRankSum=-2.254;QD=0.84;ReadPosRankSum=0.578;RM;TS=HPGOMC;CAnc=CT;GAnc=CT;OAnc=CT;rMac=CT;mSC=0.088;pSC=0.012;Map20=0.	GT:DP:GQ:PL:A:C:G:T:IR	0/1:26:60.83:61,0,418:0,0:12,15:0,0:0,0:9
+X	50601753	rs4490975	G	A	1015.99	.	AC=2;AF=1.;AN=2;DP=27;Dels=0.;FS=0.;HRun=1;HaplotypeScore=1.9991000000000001;MQ=37.;MQ0=0;QD=37.6300000000000026;1000gALT=A;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;RM;TS=HPGOMC;CAnc=A;GAnc=A;OAnc=A;rMac=A;mSC=0.024;pSC=0.086;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:27:81.26:1049,81,0:10,17:0,0:0,0:0,0:0
+X	50602945	rs1418019	C	T	745.17	.	AC=2;AF=1.;AN=2;DP=22;Dels=0.;FS=0.;HRun=0;HaplotypeScore=0.;MQ=34.7299999999999969;MQ0=2;QD=33.8699999999999974;1000gALT=T;AF1000g=0.95;AMR_AF=0.98;ASN_AF=1.;ASN_AF=1.;CpG;RM;TS=HPGOMC;CAnc=T;GAnc=T;OAnc=T;rMac=N;mSC=0.201;pSC=0.175;Map20=1.	GT:DP:GQ:PL:A:C:G:T:IR	1/1:22:60.19:778,60,0:0,0:0,0:0,0:11,11:0

@@ -1,0 +1,83 @@
+##fileformat=VCFv4.1
+##FORMAT=<ID=A,Number=2,Type=Integer,Description="Number of A bases on forward and reverse strand">
+##FORMAT=<ID=C,Number=2,Type=Integer,Description="Number of C bases on forward and reverse strand">
+##FORMAT=<ID=G,Number=2,Type=Integer,Description="Number of G bases on forward and reverse strand">
+##FORMAT=<ID=T,Number=2,Type=Integer,Description="Number of T bases on forward and reverse strand">
+##FORMAT=<ID=IR,Number=1,Type=Integer,Description="Number of reads with InDel starting at this position">
+##FORMAT=<ID=AD,Number=.,Type=Integer,Description="Allelic depths for the ref and alt alleles in the order listed">
+##FORMAT=<ID=DP,Number=1,Type=Integer,Description="Read Depth (only filtered reads used for calling)">
+##FORMAT=<ID=GQ,Number=1,Type=Float,Description="Genotype Quality">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification">
+##UnifiedGenotyper="analysis_type=UnifiedGenotyper input_file=[../final/T_hg19_1000g.bam] read_buffer_size=null phone_home=STANDARD read_filter=[] intervals=[org.broadinstitute.sting.commandline.IntervalBinding@1fa12495] excludeIntervals=null interval_set_rule=UNION interval_merging=ALL reference_sequence=/mnt/scratch/Genomes/hg19_1000g/whole_genome.fa rodBind=[] nonDeterministicRandomSeed=false downsampling_type=BY_SAMPLE downsample_to_fraction=null downsample_to_coverage=250 baq=OFF baqGapOpenPenalty=40.0 performanceLog=null useOriginalQualities=false defaultBaseQualities=-1 validation_strictness=SILENT unsafe=null num_threads=1 read_group_black_list=null pedigree=[] pedigreeString=[] pedigreeValidationType=STRICT allow_intervals_with_unindexed_bam=false disable_experimental_low_memory_sharding=false logging_level=INFO log_to_file=null help=false genotype_likelihoods_model=BOTH p_nonref_model=EXACT heterozygosity=0.001 pcr_error_rate=1.0E-4 genotyping_mode=DISCOVERY output_mode=EMIT_ALL_SITES standard_min_confidence_threshold_for_calling=30.0 standard_min_confidence_threshold_for_emitting=30.0 computeSLOD=false alleles=(RodBinding name= source=UNBOUND) assume_single_sample_reads=null min_base_quality_score=17 max_deletion_fraction=0.05 min_indel_count_for_genotyping=5 indel_heterozygosity=1.25E-4 indelGapContinuationPenalty=10.0 indelGapOpenPenalty=45.0 indelHaplotypeSize=80 bandedIndel=false indelDebug=false ignoreSNPAlleles=false dbsnp=(RodBinding name= source=UNBOUND) out=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub NO_HEADER=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub sites_only=org.broadinstitute.sting.gatk.io.stubs.VCFWriterStub debug_file=null metrics_file=null annotation=[] excludeAnnotation=[] filter_mismatching_base_and_quals=false"
+##reference=file:///mnt/scratch/Genomes/hg19_1000g/whole_genome.fa
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	DenisovaMajority
+X	50522539	rs955368	T	C	1189.58	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50525207	.	C	CA	479.14	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50526033	rs2211228	C	T	1113.69	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50527047	rs6521882	G	A	1221.7	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50528781	rs181175952	G	A	887.13	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50529957	.	C	T	767.22	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50530771	.	G	GA	646.24	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50532481	.	C	T	1252.94	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50535276	.	A	T	188.57	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50537378	.	G	T	1286.45	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50537645	.	C	T	9.38	LowQual	.	.	.
+X	50537647	.	T	C	98.85	LowQual	.	.	.
+X	50538015	.	A	C	483.2	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50538062	.	G	T,C	13.52	LowQual	.	.	.
+X	50538088	.	G	T	16.42	LowQual	.	.	.
+X	50538850	.	A	G	379.23	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50539520	.	G	C	469.24	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50542290	.	C	T	750.85	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50542692	rs5915313	G	A	801.47	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50543552	.	T	C	776.83	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50546665	.	A	G	406.16	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50547506	rs4826650	C	T	1293.03	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50552434	.	G	A	766.42	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50553048	.	T	C	873.8	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50554806	.	C	T	1244.98	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50554960	.	C	T	610.13	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50556176	.	G	A	10.43	LowQual	.	.	.
+X	50556744	.	T	G	487.07	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50559758	.	CTGTG	C	195.99	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50561599	rs2382674	T	C	1138.66	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50563256	.	CT	C	28.34	LowQual	.	.	.
+X	50563501	.	G	C	5.71	LowQual	.	.	.
+X	50563796	.	C	A	494.53	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50565029	rs5915318	A	G	274.74	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50565094	.	CAA	C	55.34	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50567341	rs5915194	G	A	1113.58	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50568867	.	C	T	1310.67	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50568914	.	T	C	532.91	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50571355	.	GCA	G	518.27	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50573415	.	A	G	473.54	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50575310	.	A	G	797.71	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50575436	.	GT	G	233.96	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50577141	rs5915323	C	T	884.11	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50577219	rs5915324	T	C	1481.6	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50578528	rs2382675	A	G	1067.48	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50578900	rs2066198	A	G	847.47	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50580721	rs2000085	C	T	1065.63	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50580917	rs68027007	GTCTA	G	906.61	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50581326	rs5915326	C	T	946.17	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50581721	.	T	TA	1431.9	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50581791	.	C	T	453.38	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50582165	rs3920845	A	G	999.64	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50584287	.	T	C	806.74	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50584564	.	T	A	593.8	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50584797	.	A	G	1386.72	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50585184	.	G	C	1116.82	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50586983	.	A	AT	143.35	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50587173	rs5961153	A	G	309.74	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50587430	rs5915328	T	C	1108.21	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50589119	.	A	G	1288.08	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50589652	.	AT	A	117.56	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50592036	.	T	TA	142.23	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50595215	.	ATATT	A	723.07	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50598221	.	T	A	10.43	LowQual	.	.	.
+X	50598222	.	T	C	48.77	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50598612	.	CTT	C	94.44	.	.	GT:DP:GQ:PL:A:C:G:T:IR	0:.:.:.:.:.:.:.:.
+X	50599447	.	CT	C	21.83	LowQual	.	.	.
+X	50601753	rs4490975	G	A	1015.99	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
+X	50602945	rs1418019	C	T	745.17	.	.	GT:DP:GQ:PL:A:C:G:T:IR	1:.:.:.:.:.:.:.:.
