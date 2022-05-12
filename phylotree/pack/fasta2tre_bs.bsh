@@ -1,0 +1,266 @@
+#! /bin/bash
+#$ -S /bin/bash
+#$ -cwd
+
+if [ ${#} -ne 2 ]
+then
+	if [ ${#} -lt 2 ]
+	then
+		echo "Too short argument!" 1>&2
+	else
+		echo "Too many arguments!" 1>&2
+	fi
+	echo "Usage: fasta2tre_bs.bsh [input] [output]" 1>&2
+	exit 1
+fi
+
+export PATH=${PATH}:/usr/local/pkg/phylip/current/exe
+
+unum=${RANDOM}_${$}
+infastafile=${1}
+lastoutfile=${2}
+
+# alignment
+mafft --retree 2 --maxiterate 0 --thread 1 --phylipout ${infastafile} > ${unum}.phy
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "mafft error (${ret})" 1>&2
+	exit 1
+fi
+
+# Original data
+# dnadist
+infilename=${unum}.phy
+outfilename=${unum}.dist
+conffilename=in_dnadist_${unum}
+
+echo "${infilename}
+f
+${outfilename}
+y" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ -e infile ]
+then
+	rm infile
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+dnadist < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "dnadist (original data) error (${ret})" 1>&2
+	exit 1
+fi
+
+# neighbor
+infilename=${unum}.dist
+outfilename=${unum}.neighbor
+outtreefilename=${unum}.tre
+conffilename=in_neighbor_${unum}
+
+echo "${infilename}
+f
+${outfilename}
+y
+f
+${outtreefilename}" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ ! -e outtree ]
+then
+	> outtree
+fi
+if [ -e infile ]
+then
+	rm infile
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+if [ -e ${outtreefilename} ]
+then
+	rm ${outtreefilename}
+fi
+neighbor < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "neighbor (original data) error (${ret})" 1>&2
+	exit 1
+fi
+
+# Making bootstrap data
+# seqboot
+infilename=${unum}.phy
+outfilename=${unum}.boot
+conffilename=in_seqboot_${unum}
+
+echo "${infilename}
+r
+500
+y
+1
+f
+${outfilename}" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ -e infile ]
+then
+	rm infile
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+seqboot < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "seqboot error (${ret})" 1>&2
+	exit 1
+fi
+
+# Bootstrap data
+# dnadist
+infilename=${unum}.boot
+outfilename=${unum}.boot.dist
+conffilename=in_boot_dnadist_${unum}
+
+echo "${infilename}
+f
+${outfilename}
+m
+d
+500
+y" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ -e infile ]
+then
+	rm infile
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+dnadist < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "dnadist (bootstrap data) error (${ret})" 1>&2
+	exit 1
+fi
+
+# neighbor
+infilename=${unum}.boot.dist
+outfilename=${unum}.boot.neighbor
+outtreefilename=${unum}.boot.tre
+conffilename=in_boot_neighbor_${unum}
+
+echo "${infilename}
+f
+${outfilename}
+m
+500
+1
+j
+y
+f
+${outtreefilename}" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ ! -e outtree ]
+then
+	> outtree
+fi
+if [ -e infile ]
+then
+	rm infile
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+if [ -e ${outtreefilename} ]
+then
+	rm ${outtreefilename}
+fi
+neighbor < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "neighbor (bootstrap data) error (${ret})" 1>&2
+	exit 1
+fi
+
+# consense
+intreefilename=${unum}.boot.tre
+outfilename=${unum}.consense
+outtreefilename=${unum}.consensus.tre
+conffilename=in_consense_${unum}
+
+echo "${intreefilename}
+f
+${outfilename}
+y
+f
+${outtreefilename}" > ${conffilename}
+
+if [ ! -e outfile ]
+then
+	> outfile
+fi
+if [ ! -e outtree ]
+then
+	> outtree
+fi
+if [ -e intree ]
+then
+	rm intree
+fi
+if [ -e ${outfilename} ]
+then
+	rm ${outfilename}
+fi
+if [ -e ${outtreefilename} ]
+then
+	rm ${outtreefilename}
+fi
+consense < ${conffilename}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "consense error (${ret})" 1>&2
+	exit 1
+fi
+
+# add bootstrap values to the original tree
+perl add_bootstrap.pl ${unum}.tre ${unum}.consense ${lastoutfile}
+ret=${?}
+if [ ${ret} -gt 0 ]
+then
+	echo "add_bootstrap.pl error (${ret})" 1>&2
+	exit 1
+fi
+
