@@ -5,4 +5,4 @@ Detail for these programs are in the research paper entitled "Haplotype-based ap
 Genes 15: 1554 (2024),
 https://doi.org/10.3390/genes15121554.
 
-Using programs on the github site, the derived data files for the research are located at https://zenodo.org/records/14548604. 
+Using programs on the github site, the derived data files for the research are located at https://doi.org/10.5281/zenodo.14551363.
